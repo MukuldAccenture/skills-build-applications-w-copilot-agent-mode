@@ -16,9 +16,9 @@ function Activities() {
   const endpoint = useMemo(() => {
     const codespaceName = import.meta.env.VITE_CODESPACE_NAME
     const base = codespaceName
-      ? `https://${codespaceName}-8000.app.github.dev/api`
-      : 'http://localhost:8000/api'
-    return `${base}/activities/`
+      ? `https://${codespaceName}-8000.app.github.dev`
+      : 'http://localhost:8000'
+    return `${base}/api/activities/`
   }, [])
 
   useEffect(() => {
