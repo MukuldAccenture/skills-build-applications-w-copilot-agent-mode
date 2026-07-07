@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
+// Dummy change: no functional impact.
+
 function normalizeCollection(payload) {
   if (Array.isArray(payload)) return payload
   if (Array.isArray(payload?.results)) return payload.results
