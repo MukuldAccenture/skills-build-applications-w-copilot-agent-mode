@@ -1,16 +1,25 @@
-# React + Vite
+# OctoFit Frontend (React 19 + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Environment variable
 
-Currently, two official plugins are available:
+Define `VITE_CODESPACE_NAME` in a local env file (for example `.env.local`) when running in GitHub Codespaces.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Example `.env.local`:
 
-## React Compiler
+```env
+VITE_CODESPACE_NAME=your-codespace-name
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+When `VITE_CODESPACE_NAME` is set, API calls use:
 
-## Expanding the ESLint configuration
+```text
+https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/[component]/
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+When `VITE_CODESPACE_NAME` is not set, the app safely falls back to:
+
+```text
+http://localhost:8000/api/[component]/
+```
+
+This avoids invalid URLs such as `https://undefined-8000.app.github.dev/...`.
