@@ -12,3 +12,5 @@ Remember, it's self-paced so feel free to take a break! ☕️
 
 Dummy change: no functional impact.
 
+Dummy change 2: no functional impact.
+
